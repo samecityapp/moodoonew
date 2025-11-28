@@ -3,9 +3,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProductGrid from './components/ProductGrid';
 import Admin from './pages/Admin';
+import ProductDetailPage from './pages/ProductDetail';
+import type { Product } from './services/products';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'admin'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'admin' | 'product'>('home');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   function handleAdminLogout() {
     setCurrentPage('home');
@@ -15,6 +18,18 @@ function App() {
     return <Admin onLogout={handleAdminLogout} onHomeClick={() => setCurrentPage('home')} />;
   }
 
+  if (currentPage === 'product' && selectedProduct) {
+    return (
+      <ProductDetailPage
+        product={selectedProduct}
+        onClose={() => {
+          setSelectedProduct(null);
+          setCurrentPage('home');
+        }}
+      />
+    );
+  }
+
   return (
     <main className="min-h-screen pb-20 bg-background text-primary font-sans antialiased selection:bg-black selection:text-white">
       <Navbar
@@ -22,7 +37,12 @@ function App() {
         onLogoClick={() => setCurrentPage('home')}
       />
       <Hero />
-      <ProductGrid />
+      <ProductGrid
+        onProductClick={(product) => {
+          setSelectedProduct(product);
+          setCurrentPage('product');
+        }}
+      />
     </main>
   );
 }

@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { getAllProducts, type Product } from '../services/products';
 
-export default function ProductGrid() {
+interface ProductGridProps {
+  onProductClick?: (product: Product) => void;
+}
+
+export default function ProductGrid({ onProductClick }: ProductGridProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -58,7 +62,7 @@ export default function ProductGrid() {
     <section className="px-4 md:px-12 max-w-7xl mx-auto">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} onClick={onProductClick} />
         ))}
       </div>
     </section>
