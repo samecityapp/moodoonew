@@ -19,6 +19,7 @@ export interface Database {
           images: string[]
           shopier_url: string
           dimensions: string | null
+          materials: string | null
           is_featured: boolean
           stock: number
         }
@@ -31,6 +32,7 @@ export interface Database {
           images: string[]
           shopier_url: string
           dimensions?: string | null
+          materials?: string | null
           is_featured?: boolean
           stock?: number
         }
@@ -43,6 +45,7 @@ export interface Database {
           images?: string[]
           shopier_url?: string
           dimensions?: string | null
+          materials?: string | null
           is_featured?: boolean
           stock?: number
         }
