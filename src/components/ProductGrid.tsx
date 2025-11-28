@@ -59,8 +59,15 @@ export default function ProductGrid({ onProductClick }: ProductGridProps) {
   }
 
   return (
-    <section className="px-4 md:px-12 max-w-7xl mx-auto">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-12">
+    <section className="relative z-20 px-4 md:px-8 max-w-[1600px] mx-auto pb-20 -mt-6">
+
+      {/* Section Header */}
+      <div className="flex items-center justify-between mb-8 px-2">
+        <span className="text-xs font-bold tracking-widest uppercase text-gray-400">Latest Collection</span>
+        <span className="text-xs text-gray-400">{products.length} Arts Available</span>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} onClick={onProductClick} />
         ))}
