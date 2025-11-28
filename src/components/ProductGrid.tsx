@@ -59,7 +59,7 @@ export default function ProductGrid({ onProductClick }: ProductGridProps) {
   }
 
   return (
-    <section className="relative z-20 px-4 md:px-8 max-w-[1600px] mx-auto pb-20 -mt-6">
+    <section className="relative z-20 px-4 md:px-8 max-w-[1600px] mx-auto pb-20 pt-4">
 
       {/* Section Header */}
       <div className="flex items-center justify-between mb-8 px-2">
