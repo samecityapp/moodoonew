@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <header className="relative w-full pt-12 pb-6 md:pt-20 md:pb-12 overflow-hidden bg-slate-50">
+    <header className="relative w-full pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-slate-50">
 
       {/* BACKGROUND: Vibrant Mesh Gradients */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -13,23 +13,22 @@ export default function Hero() {
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
-      {/* CONTENT */}
-      {/* CONTENT */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      {/* CONTENT - More breathing room */}
+      <div className="relative z-10 container mx-auto px-6 text-center">
 
-        {/* Main Title - Responsive sizing to force single line */}
-        <h1 className="font-serif font-bold text-gray-900 tracking-tighter leading-none mb-2 drop-shadow-sm
-                       text-[11.5vw] md:text-8xl lg:text-9xl">
+        {/* Main Title */}
+        <h1 className="font-serif font-bold text-gray-900 tracking-tighter leading-none mb-6 drop-shadow-sm
+                       text-[11vw] md:text-8xl lg:text-9xl">
           Moodoo Studio
         </h1>
 
         {/* Slogan */}
-        <div className="flex items-center justify-center gap-3">
-          <div className="hidden md:block w-12 h-[1px] bg-gradient-to-r from-transparent to-gray-400"></div>
-          <h2 className="font-serif italic text-lg md:text-2xl text-gray-600 whitespace-nowrap">
+        <div className="flex items-center justify-center gap-4">
+          <div className="hidden md:block w-16 h-[1px] bg-gradient-to-r from-transparent to-gray-400"></div>
+          <h2 className="font-serif italic text-lg md:text-3xl text-gray-600 whitespace-nowrap">
             May the light be with you
           </h2>
-          <div className="hidden md:block w-12 h-[1px] bg-gradient-to-l from-transparent to-gray-400"></div>
+          <div className="hidden md:block w-16 h-[1px] bg-gradient-to-l from-transparent to-gray-400"></div>
         </div>
 
       </div>
