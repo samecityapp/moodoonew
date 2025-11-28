@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-6 text-center">
 
         {/* Main Title */}
-        <h1 className="font-serif font-bold text-gray-900 tracking-tighter leading-none mb-6 drop-shadow-sm
+        <h1 className="font-serif font-bold text-gray-900 tracking-tighter leading-none mb-3 md:mb-6 drop-shadow-sm
                        text-[11vw] md:text-8xl lg:text-9xl">
           Moodoo Studio
         </h1>

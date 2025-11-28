@@ -26,11 +26,11 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
         <div className="absolute inset-0 bg-white/0 transition-colors duration-500 group-hover:bg-white/10" />
       </div>
 
-      <div className="mt-2 text-center">
+      <div className="mt-1.5 text-center">
         <h3 className="font-serif text-lg text-gray-900 group-hover:text-black transition-colors">
           {product.title}
         </h3>
-        <p className="font-sans text-sm font-light text-gray-500 mt-1">
+        <p className="font-sans text-sm font-light text-gray-500 mt-0.5">
           ₺{product.price.toLocaleString('tr-TR')}
         </p>
         {product.dimensions && (
