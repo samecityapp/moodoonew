@@ -1,41 +1,38 @@
 export default function Hero() {
   return (
-    <header className="relative w-full pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+    <header className="relative w-full pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden bg-slate-50">
 
-      {/* BACKGROUND EFFECT (Abstract Glass Rainbow Layers) */}
-      <div className="absolute inset-0 z-0 bg-white">
+      {/* BACKGROUND: Stronger Mesh Gradients */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
 
-        {/* Layer 1: Red/Orange Base */}
-        <div className="absolute top-[-20%] left-[-10%] w-[80%] h-[80%] rounded-[40%] bg-gradient-to-br from-red-200/40 via-orange-200/30 to-transparent blur-3xl opacity-70 animate-pulse" style={{ animationDuration: '12s' }} />
+        {/* Orb 1: Purple/Blue (Top Right) - Creating depth */}
+        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 blur-[80px] opacity-20 animate-pulse" style={{ animationDuration: '10s' }} />
 
-        {/* Layer 2: Yellow/Green - Glassy Element */}
-        <div className="absolute top-[10%] right-[-20%] w-[70%] h-[90%] rounded-[35%] rotate-12 bg-gradient-to-bl from-yellow-200/40 via-green-200/30 to-transparent backdrop-blur-md border-2 border-white/10 shadow-lg opacity-60 animate-pulse" style={{ animationDuration: '15s', animationDelay: '2s' }} />
+        {/* Orb 2: Rose/Orange (Top Left) - Warmth */}
+        <div className="absolute top-[-10%] left-[-20%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-rose-500 via-orange-400 to-yellow-300 blur-[90px] opacity-25" />
 
-        {/* Layer 3: Blue/Indigo - Glassy Element */}
-        <div className="absolute bottom-[-30%] left-[10%] w-[90%] h-[70%] rounded-[45%] -rotate-12 bg-gradient-to-tr from-blue-200/40 via-indigo-200/30 to-transparent backdrop-blur-xl border border-white/20 shadow-xl opacity-50 animate-pulse" style={{ animationDuration: '18s', animationDelay: '4s' }} />
+        {/* Orb 3: Cyan/Teal (Bottom Center) - Freshness */}
+        <div className="absolute bottom-[-20%] left-[20%] w-[700px] h-[500px] rounded-full bg-gradient-to-t from-cyan-400 via-teal-300 to-transparent blur-[100px] opacity-20 animate-bounce" style={{ animationDuration: '20s' }} />
 
-        {/* Layer 4: Purple/Pink Overlay */}
-        <div className="absolute top-[40%] left-[30%] w-[50%] h-[50%] rounded-full bg-gradient-to-r from-purple-200/30 to-pink-200/30 blur-2xl opacity-40 animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }} />
-
-        {/* Global Overlay for Better Text Contrast */}
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
+        {/* Glass Noise Texture (Optional for realism) */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
       {/* CONTENT */}
       <div className="relative z-10 container mx-auto px-6 text-center">
 
-        {/* Main Title */}
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 tracking-tight leading-none mb-3 drop-shadow-sm">
+        {/* Main Title - Super Modern & Elegant */}
+        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold text-gray-900 tracking-tighter leading-none mb-6 drop-shadow-sm">
           Moodoo Studio
         </h1>
 
-        {/* Slogan - Single Line Logic */}
-        <div className="flex items-center justify-center gap-3">
-          <span className="hidden md:block w-12 h-[1px] bg-gray-400/50"></span>
-          <h2 className="font-serif italic text-lg sm:text-xl md:text-2xl text-gray-700 whitespace-nowrap drop-shadow-sm">
+        {/* Slogan - Clean Single Line */}
+        <div className="flex items-center justify-center gap-4">
+          <div className="hidden md:block w-16 h-[1px] bg-gradient-to-r from-transparent to-gray-400"></div>
+          <h2 className="font-serif italic text-xl md:text-3xl text-gray-600 whitespace-nowrap">
             May the light be with you
           </h2>
-          <span className="hidden md:block w-12 h-[1px] bg-gray-400/50"></span>
+          <div className="hidden md:block w-16 h-[1px] bg-gradient-to-l from-transparent to-gray-400"></div>
         </div>
 
       </div>
