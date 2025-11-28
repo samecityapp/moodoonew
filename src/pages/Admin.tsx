@@ -33,13 +33,18 @@ export default function Admin({ onLogout, onHomeClick }: AdminProps) {
   }
 
   async function handleSaveProduct(productData: NewProduct) {
-    if (editingProduct) {
-      const updated = await updateProduct(editingProduct.id, productData);
-      setProducts(products.map(p => p.id === editingProduct.id ? updated : p));
-      setEditingProduct(null);
-    } else {
-      const newProduct = await createProduct(productData);
-      setProducts([newProduct, ...products]);
+    try {
+      if (editingProduct) {
+        const updated = await updateProduct(editingProduct.id, productData);
+        setProducts(products.map(p => p.id === editingProduct.id ? updated : p));
+        setEditingProduct(null);
+      } else {
+        const newProduct = await createProduct(productData);
+        setProducts([newProduct, ...products]);
+      }
+    } catch (err) {
+      console.error('Product save error:', err);
+      throw err;
     }
   }
 

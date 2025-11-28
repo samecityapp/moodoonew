@@ -106,7 +106,10 @@ export default function ProductModal({ isOpen, onClose, onSave, product }: Produ
       await onSave(productData);
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Kaydederken bir hata oluştu');
+      console.error('Save error details:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Kaydederken bir hata oluştu';
+      setError(errorMessage);
+      alert('HATA: ' + errorMessage);
     } finally {
       setLoading(false);
     }
