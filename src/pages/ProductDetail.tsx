@@ -121,7 +121,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
 
               {product.description && (
                 <div className="prose prose-gray max-w-none text-center md:text-left bg-white border border-gray-200 rounded-2xl p-6">
-                  <p className="text-gray-600 leading-relaxed whitespace-pre-wrap">
+                  <p className="text-gray-700 leading-[1.6] whitespace-pre-wrap font-medium">
                     {product.description}
                   </p>
                 </div>
