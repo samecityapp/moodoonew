@@ -16,7 +16,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       onClick={() => onClick?.(product)}
       className="group cursor-pointer flex flex-col gap-3"
     >
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100/50">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100/50 rounded-lg">
         <motion.img
           layoutId={`product-image-${product.id}`}
           src={product.images[0]}
