@@ -92,7 +92,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
                 </div>
 
                 {product.images.length > 1 && (
-                  <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+                  <div className="hidden md:flex gap-2 mt-4 overflow-x-auto pb-2">
                     {product.images.map((image, index) => (
                       <button
                         key={index}
