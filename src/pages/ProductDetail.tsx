@@ -27,7 +27,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-white overflow-y-auto"
+        className="fixed inset-0 z-50 bg-gray-50 overflow-y-auto"
       >
         <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
@@ -120,7 +120,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
               </div>
 
               {product.description && (
-                <div className="prose prose-gray max-w-none text-center md:text-left border border-gray-200 rounded-2xl p-6">
+                <div className="prose prose-gray max-w-none text-center md:text-left bg-white border border-gray-200 rounded-2xl p-6">
                   <p className="text-gray-600 leading-relaxed whitespace-pre-wrap">
                     {product.description}
                   </p>
