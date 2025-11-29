@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <header className="relative w-full py-20 md:py-32 overflow-hidden bg-slate-50">
+    <header className="relative w-full py-12 md:py-32 overflow-hidden bg-slate-50">
 
       {/* BACKGROUND: Vibrant Mesh Gradients */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -13,16 +13,15 @@ export default function Hero() {
         <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
-      {/* CONTENT */}
+      {/* CONTENT - Perfectly centered and tight */}
       <div className="relative z-10 container mx-auto px-4 text-center">
 
         {/* Main Title
-            - mb-2 on mobile (very tight gap)
-            - md:mb-6 on desktop (more breathing room)
-            - text-[11.5vw] ensures single line on mobile
+            - mb-1 on mobile (very tight gap)
+            - text-[11.5vw] ensures single line fit
         */}
         <h1 className="font-serif font-bold text-gray-900 tracking-tighter leading-none
-                       mb-2 md:mb-6 drop-shadow-sm
+                       mb-1 md:mb-6 drop-shadow-sm
                        text-[11.5vw] md:text-8xl lg:text-9xl">
           Moodoo Studio
         </h1>
