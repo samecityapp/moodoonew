@@ -22,6 +22,7 @@ export interface Database {
           materials: string | null
           is_featured: boolean
           stock: number
+          display_order: number
         }
         Insert: {
           id?: number
@@ -35,6 +36,7 @@ export interface Database {
           materials?: string | null
           is_featured?: boolean
           stock?: number
+          display_order?: number
         }
         Update: {
           id?: number
@@ -48,6 +50,7 @@ export interface Database {
           materials?: string | null
           is_featured?: boolean
           stock?: number
+          display_order?: number
         }
       }
     }
