@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <header className="relative w-full py-32 md:py-40 overflow-hidden bg-slate-50">
+    <header className="relative w-full py-32 md:py-40 pb-12 md:pb-16 overflow-hidden bg-slate-50">
 
       {/* BACKGROUND: Vibrant Mesh Gradients */}
       <div className="absolute inset-0 z-0 overflow-hidden">
