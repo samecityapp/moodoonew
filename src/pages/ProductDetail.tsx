@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, ShoppingBag } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, ShoppingBag, X as XIcon } from 'lucide-react';
 import type { Product } from '../services/products';
 
 interface ProductDetailPageProps {
@@ -19,27 +19,38 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
     setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
   }
 
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 bg-white overflow-y-auto"
-    >
-      <button
-        onClick={onClose}
-        className="fixed top-6 right-6 z-50 p-3 bg-white/90 backdrop-blur-sm rounded-full hover:bg-gray-100 transition-colors shadow-lg"
-        aria-label="Close"
-      >
-        <X size={20} />
-      </button>
+  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
 
-      <div className="min-h-screen pt-20 pb-12 px-4 md:px-8">
+  return (
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 bg-white overflow-y-auto"
+      >
+        <header className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+            <button
+              onClick={onClose}
+              className="flex items-center gap-2 text-gray-900 hover:text-gray-600 transition-colors"
+              aria-label="Geri"
+            >
+              <ArrowLeft size={20} />
+              <span className="font-serif text-lg">Moodoo Studio</span>
+            </button>
+          </div>
+        </header>
+
+        <div className="min-h-screen pt-20 pb-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
             <div className="relative">
               <div className="sticky top-24">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100">
+                <div
+                  className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100 cursor-pointer"
+                  onClick={() => setFullScreenImage(product.images[currentImageIndex])}
+                >
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={currentImageIndex}
@@ -100,10 +111,10 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
 
             <div className="space-y-8">
               <div>
-                <h1 className="font-serif text-4xl md:text-5xl text-gray-900 mb-4">
+                <h1 className="font-serif text-3xl md:text-4xl text-gray-900 mb-2">
                   {product.title}
                 </h1>
-                <p className="text-3xl font-light text-gray-900">
+                <p className="text-2xl font-light text-gray-900">
                   ₺{product.price.toLocaleString('tr-TR')}
                 </p>
               </div>
@@ -153,8 +164,35 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+
+      <AnimatePresence>
+        {fullScreenImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4"
+            onClick={() => setFullScreenImage(null)}
+          >
+            <button
+              onClick={() => setFullScreenImage(null)}
+              className="absolute top-6 right-6 p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-colors text-white"
+              aria-label="Kapat"
+            >
+              <XIcon size={24} />
+            </button>
+            <img
+              src={fullScreenImage}
+              alt={product.title}
+              className="max-w-full max-h-full object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
