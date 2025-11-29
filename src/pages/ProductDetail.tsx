@@ -48,7 +48,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
             <div className="relative">
               <div className="sticky top-16 md:top-24">
                 <div
-                  className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100 cursor-pointer"
+                  className="relative aspect-square md:aspect-[3/4] w-full overflow-hidden bg-gray-100 cursor-pointer"
                   onClick={() => setFullScreenImage(product.images[currentImageIndex])}
                 >
                   <AnimatePresence mode="wait">
