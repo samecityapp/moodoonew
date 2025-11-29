@@ -110,7 +110,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
             </div>
 
             <div className="space-y-8 px-4 md:px-0">
-              <div>
+              <div className="text-center md:text-left">
                 <h1 className="font-serif text-3xl md:text-4xl text-gray-900 mb-1.5">
                   {product.title}
                 </h1>
@@ -120,7 +120,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
               </div>
 
               {product.description && (
-                <div className="prose prose-gray max-w-none">
+                <div className="prose prose-gray max-w-none text-center md:text-left">
                   <p className="text-gray-600 leading-relaxed whitespace-pre-wrap">
                     {product.description}
                   </p>
@@ -129,18 +129,18 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
 
               <div className="space-y-4 pt-4 border-t border-gray-200">
                 {product.dimensions && (
-                  <div className="flex justify-between items-center">
+                  <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-1 md:gap-0">
                     <span className="text-sm font-medium text-gray-500">Boyutlar</span>
                     <span className="text-sm text-gray-900">{product.dimensions}</span>
                   </div>
                 )}
                 {product.materials && (
-                  <div className="flex justify-between items-center">
+                  <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-1 md:gap-0">
                     <span className="text-sm font-medium text-gray-500">Materyaller</span>
                     <span className="text-sm text-gray-900">{product.materials}</span>
                   </div>
                 )}
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-1 md:gap-0">
                   <span className="text-sm font-medium text-gray-500">Stok Durumu</span>
                   <span className={`text-sm font-medium ${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
                     {product.stock > 0 ? `${product.stock} adet mevcut` : 'Stokta yok'}
