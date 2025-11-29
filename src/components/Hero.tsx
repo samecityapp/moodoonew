@@ -14,24 +14,20 @@ export default function Hero() {
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 text-center flex flex-col items-center justify-center">
 
-        {/* Main Title
-            - mb-2 on mobile (very tight gap)
-            - md:mb-6 on desktop (more breathing room)
-            - text-[11.5vw] ensures single line on mobile
-        */}
+        {/* Main Title */}
         <h1 className="font-serif font-bold text-gray-900 tracking-tighter leading-none
-                       mb-2 md:mb-6 drop-shadow-sm
-                       text-[11.5vw] md:text-8xl lg:text-9xl">
+                       mb-3 md:mb-6 drop-shadow-sm
+                       text-[11.5vw] sm:text-7xl md:text-8xl lg:text-9xl">
           Moodoo Studio
         </h1>
 
         {/* Slogan */}
-        <div className="flex items-center justify-center gap-3">
-          <div className="hidden md:block w-12 h-[1px] bg-gradient-to-r from-transparent to-gray-400"></div>
-          <h2 className="font-serif italic text-gray-600 whitespace-nowrap
-                     text-base sm:text-lg md:text-3xl">
+        <div className="flex items-center justify-center gap-4">
+          <div className="hidden md:block w-16 h-[1px] bg-gradient-to-r from-transparent to-gray-400"></div>
+          <h2 className="font-serif italic text-gray-600
+                     text-lg sm:text-xl md:text-3xl">
             May the light be with you
           </h2>
           <div className="hidden md:block w-12 h-[1px] bg-gradient-to-l from-transparent to-gray-400"></div>
