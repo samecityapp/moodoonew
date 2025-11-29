@@ -116,7 +116,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
             </div>
 
             <div className="space-y-8 px-4 md:px-0" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-              <div className="text-left">
+              <div className="text-center md:text-left">
                 <h1 className="text-[22px] md:text-3xl font-medium leading-snug mb-1" style={{ color: '#0D0D26' }}>
                   {product.title}
                 </h1>
@@ -131,7 +131,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
               </div>
 
               {product.description && (
-                <div className="prose prose-gray max-w-none text-left bg-white border border-gray-200 rounded-2xl p-6">
+                <div className="prose prose-gray max-w-none text-center md:text-left bg-white border border-gray-200 rounded-2xl p-6">
                   <div className="text-[16px] md:text-[17px] leading-[1.6] whitespace-pre-line space-y-4" style={{ color: '#0D0D26' }}>
                     {product.description}
                     {product.materials && (
@@ -144,7 +144,7 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
               )}
 
               <div className="space-y-4 pt-4 border-t border-gray-200">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-1 md:gap-0">
+                <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-1 md:gap-0">
                   <span className="text-sm font-medium text-gray-500">Stok Durumu</span>
                   <span className={`text-sm font-medium ${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
                     {product.stock > 0 ? `${product.stock} adet mevcut` : 'Stokta yok'}
