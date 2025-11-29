@@ -109,37 +109,35 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
               </div>
             </div>
 
-            <div className="space-y-8 px-4 md:px-0">
+            <div className="space-y-8 px-4 md:px-0" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               <div className="text-center md:text-left">
-                <h1 className="font-serif text-3xl md:text-4xl text-gray-900 mb-1.5">
+                <h1 className="text-[22px] md:text-3xl font-medium leading-snug mb-1" style={{ color: '#0D0D26' }}>
                   {product.title}
                 </h1>
-                <p className="text-base md:text-2xl font-medium tracking-tight text-gray-900" style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+                {product.dimensions && (
+                  <p className="text-[17px] mb-6" style={{ color: '#0D0D26' }}>
+                    Ürün ölçüleri: {product.dimensions}
+                  </p>
+                )}
+                <p className="text-xl font-semibold mb-6" style={{ color: '#0D0D26' }}>
                   ₺{product.price.toLocaleString('tr-TR')}
                 </p>
               </div>
 
               {product.description && (
                 <div className="prose prose-gray max-w-none text-center md:text-left bg-white border border-gray-200 rounded-2xl p-6">
-                  <p className="text-gray-700 leading-[1.35] whitespace-pre-wrap" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 400 }}>
+                  <div className="text-[16px] md:text-[17px] leading-[1.6] whitespace-pre-line space-y-4" style={{ color: '#0D0D26' }}>
                     {product.description}
-                  </p>
+                    {product.materials && (
+                      <p className="mt-4">
+                        {product.materials}
+                      </p>
+                    )}
+                  </div>
                 </div>
               )}
 
               <div className="space-y-4 pt-4 border-t border-gray-200">
-                {product.dimensions && (
-                  <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-1 md:gap-0">
-                    <span className="text-sm font-medium text-gray-500">Boyutlar</span>
-                    <span className="text-sm text-gray-900">{product.dimensions}</span>
-                  </div>
-                )}
-                {product.materials && (
-                  <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-1 md:gap-0">
-                    <span className="text-sm font-medium text-gray-500">Materyaller</span>
-                    <span className="text-sm text-gray-900">{product.materials}</span>
-                  </div>
-                )}
                 <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-1 md:gap-0">
                   <span className="text-sm font-medium text-gray-500">Stok Durumu</span>
                   <span className={`text-sm font-medium ${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
