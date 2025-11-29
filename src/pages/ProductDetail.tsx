@@ -42,11 +42,11 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
           </div>
         </header>
 
-        <div className="min-h-screen pt-20 pb-12 px-4 md:px-8">
+        <div className="min-h-screen pt-16 pb-12 px-0 md:px-8 md:pt-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid md:grid-cols-2 gap-3 md:gap-8 lg:gap-16">
             <div className="relative">
-              <div className="sticky top-24">
+              <div className="sticky top-16 md:top-24">
                 <div
                   className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100 cursor-pointer"
                   onClick={() => setFullScreenImage(product.images[currentImageIndex])}
@@ -109,12 +109,12 @@ export default function ProductDetailPage({ product, onClose }: ProductDetailPag
               </div>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-8 px-4 md:px-0">
               <div>
-                <h1 className="font-serif text-3xl md:text-4xl text-gray-900 mb-2">
+                <h1 className="font-serif text-3xl md:text-4xl text-gray-900 mb-1.5">
                   {product.title}
                 </h1>
-                <p className="text-2xl font-light text-gray-900">
+                <p className="text-base md:text-2xl font-medium tracking-tight text-gray-900" style={{ fontFamily: '"SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
                   ₺{product.price.toLocaleString('tr-TR')}
                 </p>
               </div>
