@@ -14,7 +14,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       onClick={() => onClick?.(product)}
-      className="group cursor-pointer bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+      className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100/50">
         <motion.img
