@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <main className="min-h-screen bg-white selection:bg-rose-200">
+    <main className="min-h-screen bg-gray-50 selection:bg-rose-200">
       <Navbar
         onAdminClick={() => setCurrentPage('admin')}
         onLogoClick={() => setCurrentPage('home')}

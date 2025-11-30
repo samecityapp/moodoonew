@@ -14,9 +14,9 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       onClick={() => onClick?.(product)}
-      className="group cursor-pointer flex flex-col gap-3"
+      className="group cursor-pointer bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
     >
-      <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100/50 rounded-lg border border-gray-100">
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100/50">
         <motion.img
           layoutId={`product-image-${product.id}`}
           src={product.images[0]}
@@ -26,7 +26,7 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
         <div className="absolute inset-0 bg-white/0 transition-colors duration-500 group-hover:bg-white/10" />
       </div>
 
-      <div className="mt-1.5 text-center">
+      <div className="p-4 text-center">
         <h3 className="font-serif text-lg text-gray-900 group-hover:text-black transition-colors">
           {product.title}
         </h3>
